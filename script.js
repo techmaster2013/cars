@@ -364,7 +364,7 @@ host = function(){
 	document.getElementById("host").onclick = null;
 	f.style.transform = "translate3d(0, -100vh, 0)";
 	setTimeout(function(){
-		f.innerHTML = "<div class='info title'>Use this code to join the game!<div id='code'>Loading...</div></div><div id='startgame' class='title' onclick='startGame()' ontouchstart='this.click()'>Start!</div>";
+		f.innerHTML = "<div class='info title'>use this join code for people to join your race!<div id='code'>creating join code...</div></div><div id='startgame' class='title' onclick='startGame()' ontouchstart='this.click()'>Start!</div>";
 		if(VR)
 			f.innerHTML += "<div id='divider'></div>";
 		f.appendChild(element);
@@ -374,8 +374,8 @@ host = function(){
 
 	function getCode(){
 		code = "";
-		var letters = "ABCDEFGHIJKLMMNOPQRSTUVWXYZ";
-		for(var i = 0; i < 4; i++)
+		var letters = "ABCDEFGHIJKLMMNOPQRSTUVWXYZ12334567890";
+		for(var i = 0; i < 6; i++)
 			code += letters[Math.floor(Math.random() * letters.length)];
 		database.ref(code).once("value", function(codeCheck){
 			console.log(codeCheck.val());
@@ -509,7 +509,7 @@ joinGame = function(){
 	document.getElementById("join").onclick = null;
 	f.style.transform = "translate3d(0, -100vh, 0)";
 	setTimeout(function(){
-		f.innerHTML = "<div class='info title'>Enter a code to join a game!<input id='incode' class='title' onkeyup='codeCheck(event)' ontouchstart='this.focus()'></input></div>";
+		f.innerHTML = "<div class='info title'>enter the join code on the host's screen<input id='incode' class='title' onkeyup='codeCheck(event)' ontouchstart='this.focus()'></input></div>";
 		if(VR)
 			f.innerHTML += "<div id='divider'></div>";
 		f.appendChild(element);
