@@ -1,4 +1,4 @@
-var SPEED = 0.004;
+var SPEED = 0.05;
 var CAMERA_LAG = 0.9;
 var COLLISION = 1.1;
 var BOUNCE = 0.7;
@@ -343,7 +343,7 @@ menu2 = function(){
 	VR = document.getElementById("cardboard").className == "tools sel";
 	f.style.transform = "translate3d(0, -100vh, 0)";
 	setTimeout(function(){
-		f.innerHTML = "<div class='menuitem title button' id='host' ontouchstart='this.click()' onclick='host()'>Host a game</div><div class='menuitem title button' ontouchstart='this.click()' id='join' onclick='joinGame()'>Join a game</div>";
+		f.innerHTML = "<div class='menuitem title button' id='host' ontouchstart='this.click()' onclick='host()'>Start a race</div><div class='menuitem title button' ontouchstart='this.click()' id='join' onclick='joinGame()'>Join a race</div>";
 		f.style.transform = "none";
 		setTimeout(function(){
 			document.getElementById("host").style.transform = "none";
